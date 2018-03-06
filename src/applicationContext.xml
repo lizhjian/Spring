@@ -6,4 +6,12 @@
     <bean id="helloWorld" class="com.wuxin.HelloWorld">
         <property name="name" value="Spring"></property>
     </bean>
+    <bean id="aaa" class="com.wuxin.AAA">
+        <property name="height" value="176"></property>
+        <property name="bbb" ref="bbb"></property>
+
+    </bean>
+    <bean id="bbb" class="com.wuxin.BBB">
+        <property name="age" value="28"></property>
+    </bean>
 </beans>
