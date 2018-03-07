@@ -18,9 +18,9 @@ public class Main {
 /*        HelloWorld helloWorld =  (HelloWorld) ctx.getBean("helloWorld");
         helloWorld.hello();*/
         //AAA引用BBB
-       /* AAA aaa = (AAA) ctx.getBean("aaa");
-        aaa.hello();*/
-       Car car = ctx.getBean(Car.class);
-        System.out.println(car.toString());
+        AAA aaa = (AAA) ctx.getBean("aaa");
+        aaa.hello();
+       /*Car car = ctx.getBean(Car.class);
+        System.out.println(car.toString());*/
     }
 }

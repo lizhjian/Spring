@@ -14,4 +14,8 @@ public class BBB {
     public BBB() {
         System.out.println("bbb的构造函数");
     }
+
+    public BBB(String age) {
+        this.age = age;
+    }
 }
