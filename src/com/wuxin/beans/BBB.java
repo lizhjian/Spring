@@ -1,4 +1,4 @@
-package com.wuxin;
+package com.wuxin.beans;
 
 public class BBB {
    private  String age;

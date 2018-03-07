@@ -1,6 +1,5 @@
-package com.wuxin;
+package com.wuxin.beans;
 
-import com.wuxin.HelloWorld;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

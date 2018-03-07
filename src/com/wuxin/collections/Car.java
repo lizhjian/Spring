@@ -1,4 +1,4 @@
-package com.wuxin;
+package com.wuxin.collections;
 
 public class Car {
     public String getBrand() {

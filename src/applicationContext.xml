@@ -7,10 +7,10 @@
     所以要求Bean中必须有无参数的构造器
     id:应用该bean的标识
     -->
-    <bean id="helloWorld" class="com.wuxin.HelloWorld">
+    <bean id="helloWorld" class="com.wuxin.beans.HelloWorld">
         <property name="name" value="Spring"></property>
     </bean>
-    <bean id="aaa" class="com.wuxin.AAA">
+    <bean id="aaa" class="com.wuxin.beans.AAA">
         <!--<property name="height" value="176"></property>-->
         <!--<property name="bbb" ref="bbb"></property>-->
         <!--内部bean -->
@@ -24,16 +24,41 @@
         <constructor-arg ref="car"></constructor-arg>
         <property name="car.brand" value="奔驰"></property>
     </bean>
-    <bean id="bbb" class="com.wuxin.BBB">
+    <bean id="bbb" class="com.wuxin.beans.BBB">
         <property name="age" value="28"></property>
     </bean>
 <!--    可以使用参数的类型来区别重载构造器-->
-    <bean id="car" class="com.wuxin.Car">
+    <bean id="car" class="com.wuxin.beans.Car">
         <constructor-arg value="aodi" type="java.lang.String"></constructor-arg>
         <constructor-arg value="shanghai" index="1"></constructor-arg>
         <constructor-arg  index="2">
             <value>3000</value>
         </constructor-arg>
+    </bean>
+    <bean id="car2" class="com.wuxin.collections.Car">
+        <constructor-arg value="aodi" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="shanghai" index="1"></constructor-arg>
+        <constructor-arg  index="2">
+            <value>3000</value>
+        </constructor-arg>
+    </bean>
+    <bean id="car3" class="com.wuxin.collections.Car">
+        <constructor-arg value="baoma" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="shanghai" index="1"></constructor-arg>
+        <constructor-arg  index="2">
+            <value>3000</value>
+        </constructor-arg>
+    </bean>
+    <!--集合赋值-->
+    <bean id="person3" class="com.wuxin.collections.Person">
+        <property name="age" value="100岁"></property>
+        <property name="cars">
+            <list>
+                <ref bean="car2"></ref>
+                <ref bean="car3"></ref>
+            </list>
+        </property>
+
     </bean>
 
 </beans>
