@@ -9,6 +9,8 @@ public class BeanRelation {
     //    Address address = (Address)ctx.getBean("address");
         Address address2 = (Address)ctx.getBean("address2");
      //   System.out.println(address.toString());
-        System.out.println(address2.toString());
+        /*System.out.println(address2.toString());*/
+        Person person = (Person) ctx.getBean("person");
+        System.out.println(person.toString());
     }
 }

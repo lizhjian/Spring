@@ -11,4 +11,13 @@
 
     </bean>
 
+    <!--person实例化之前 要求car先实例化，但实际上 可能person用不到car-->
+    <bean id="person" class="com.wuxin.realtion.Person"
+    p:name="tom" p:address-ref="address2"  depends-on="car" >
+
+    </bean>
+    <bean id="car" class="com.wuxin.realtion.Car" p:brand="audi" p:price="3000">
+
+    </bean>
+
 </beans>

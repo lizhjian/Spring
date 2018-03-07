@@ -1,4 +1,4 @@
-package com.wuxin.autowire;
+package com.wuxin.realtion;
 
 
 public class Person {
