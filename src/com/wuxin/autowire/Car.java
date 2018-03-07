@@ -27,4 +27,8 @@ public class Car {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public Car() {
+        System.out.println("car 的构造方法");
+    }
 }

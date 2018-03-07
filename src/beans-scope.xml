@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <!--
+          使用bean的scope 属性来配置bean的作用域
+          singleton:默认值  容器的证明周期内只创建这个一个值
+          prototype:原型的 容器初始化不创建bean的实力 而在每次请求时都创建一个新的Bean
+          singleton
+          prototype
+          request
+          session
+        -->
+       <bean id="car" class="com.wuxin.autowire.Car"
+       scope="singleton">
+           <property name="brand" value="audi"></property>
+           <property name="price" value="2000"></property>
+       </bean>
+</beans>
