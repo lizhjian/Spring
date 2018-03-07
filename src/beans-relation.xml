@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--抽象bean不能被继承-->
+    <bean id="address" class="com.wuxin.realtion.Address" p:city="beijing" p:street="dazhongsi" abstract="true">
+
+    </bean>
+    <bean id="address2" p:city="tianjin" p:street="heping" parent="address">
+
+    </bean>
+
+</beans>
