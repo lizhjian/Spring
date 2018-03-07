@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
     <!--配置bean
     class的全类名，通过烦着的方式在IOC容器中创建Bean
     所以要求Bean中必须有无参数的构造器
@@ -59,6 +59,27 @@
             </list>
         </property>
 
+    </bean>
+    <!--prop-->
+    <bean id="dataSource" class="com.wuxin.collections.DataSource">
+        <property name="properties">
+            <!--使用props和prop来为properties赋值-->
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">123456</prop>
+                <prop key="jdbcUrl">xxxx</prop>
+            </props>
+        </property>
+    </bean>
+
+   <!-- 配置单例集合，供过个bean引用-->
+    <util:list id="cars">
+        <ref bean="car2"/>
+        <ref bean="car3"/>
+    </util:list>
+    <bean id="person4" class="com.wuxin.collections.Person">
+        <property name="age" value="35"></property>
+        <property name="cars" ref="cars"></property>
     </bean>
 
 </beans>
