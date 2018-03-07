@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.wuxin.autowire.Address" p:city="beijing" p:street="huilonguan">
+
+    </bean>
+    <!--若IOC容器中油一个以上的类 在通过类型匹配时会有问题-->
+    <!--    <bean id="address2" class="com.wuxin.autowire.Address" p:city="beijing" p:street="huilonguan">
+
+    </bean>-->
+    <bean id="car" class="com.wuxin.autowire.Car" p:brand="audi" p:price="8000">
+
+    </bean>
+    <!--手动装配-->
+    <!--<bean id="person" class="com.wuxin.autowire.Person" p:name="Tom" p:address-ref="address" p:car-ref="car">
+
+    </bean>-->
+    <!--根据名称自动装配-->
+    <!--<bean id="person" class="com.wuxin.autowire.Person" p:name="Tom" autowire="byName">
+
+    </bean>-->
+    <!--根据类型自动装配-->
+    <bean id="person" class="com.wuxin.autowire.Person" p:name="Tom" autowire="byType">
+
+    </bean>
+
+    <!--缺点：
+    1、bean的属性是autowire 那么以后当前bean所有的属性都得用这个bean
+    2、两个不能同时用-->
+
+
+</beans>
