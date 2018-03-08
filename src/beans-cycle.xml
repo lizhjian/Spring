@@ -6,6 +6,9 @@
 
     <bean id="car" class="com.wuxin.cycle.Car" init-method="init" destroy-method="destroy" >
         <property name="brand" value="audi"></property>
+    </bean>
+
+    <bean class="com.wuxin.cycle.MyBeanPostProcessor">
 
     </bean>
 </beans>
