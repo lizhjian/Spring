@@ -8,6 +8,8 @@ public class Main {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-cycle.xml");
         Car car= (Car) ctx.getBean("car");
         System.out.println(car);
+        Person person= (Person) ctx.getBean("person");
+        System.out.println(car);
         ctx.close();
     }
 }

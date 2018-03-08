@@ -7,7 +7,12 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
         System.out.println("前置处理器");
-        return o;
+        if("car".equals(s)){
+            return o;
+        }else {
+            return  null;
+        }
+
     }
 
     @Override
