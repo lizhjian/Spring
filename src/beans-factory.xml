@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <!--通过静态工厂方法来配置bean 注意不是配置静态工厂方法，而是配置bean实例
+     class属性 指向静态工厂方法全类名
+     factory-method 指向静态工厂方法类名
+     如果工厂方法需要传递参数  则使用constructor
+  -->
+
+    <bean id="car1" class="com.wuxin.factory.StaticaCarFactory" factory-method="getCar">
+
+        <constructor-arg value="audi"></constructor-arg>
+
+    </bean>
+
+
+</beans>
