@@ -6,8 +6,16 @@
    <!--指定Spring  IOC容器扫描的包 扫描当前包和当前报的子包-->
     <!--<context:component-scan base-package="com.wuxin.annotation"
         resource-pattern="repository/*.class"></context:component-scan>-->
-    <context:component-scan base-package="com.wuxin.annotation"
-        ></context:component-scan>
+    <!--use-default-filters默认都扫描-->
+   <!-- <context:component-scan base-package="com.wuxin.annotation"  use-default-filters="true">
+        <context:include-filter  type="annotation" expression="org.springframework.stereotype.Repository"></context:include-filter>
+        &lt;!&ndash;不包含Repository  annotation &ndash;&gt;
+    </context:component-scan>-->
     <!--resource-pattern指定只扫描指定的包-->
+
+
+    <context:component-scan base-package="com.wuxin.annotation">
+        <context:exclude-filter   type="assignable" expression="com.wuxin.annotation.repository.UserRepository"></context:exclude-filter>
+    </context:component-scan>
 
 </beans>
