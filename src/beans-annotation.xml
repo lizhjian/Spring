@@ -13,9 +13,9 @@
     </context:component-scan>-->
     <!--resource-pattern指定只扫描指定的包-->
 
-
+    <!--assignable 通过类名匹配  排除UserRepository-->
     <context:component-scan base-package="com.wuxin.annotation">
-        <context:exclude-filter   type="assignable" expression="com.wuxin.annotation.repository.UserRepository"></context:exclude-filter>
+        <!--<context:exclude-filter   type="assignable" expression="com.wuxin.annotation.repository.UserRepository"></context:exclude-filter>-->
     </context:component-scan>
 
 </beans>
