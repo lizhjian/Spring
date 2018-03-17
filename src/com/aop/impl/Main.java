@@ -11,9 +11,9 @@ public class Main {
         AtithmeticCalculator atithmeticCalculator =ctx.getBean(AtithmeticCalculator.class);
       //  AtithmeticCalculator atithmeticCalculator =(AtithmeticCalculatorImpl)ctx.getBean("atithmeticCalculatorImpl");
         //3 使用Bean
-        int result = atithmeticCalculator.add(3,6);
-        System.out.println(result);
-        result = atithmeticCalculator.div(6,6);
+        /*int result = atithmeticCalculator.add(3,6);
+        System.out.println(result);*/
+       int result = atithmeticCalculator.div(6,0);
         System.out.println(result);
     }
 }
