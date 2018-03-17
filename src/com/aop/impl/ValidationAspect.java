@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,8 +15,10 @@ import java.util.List;
 @Aspect
 @Component
 public class ValidationAspect {
-    @Before("execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(..))")
+  //  @Before("execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(..))")
+    @Before("LoggingAspect.declareJointPointExpression()")
     public void validateAspect(JoinPoint joinPoint){
+
         System.out.println("Validate方法...");
     }
 }

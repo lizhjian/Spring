@@ -13,12 +13,18 @@ import java.util.List;
 @Component
 public class LoggingAspect {
 
+    //切面重用  定义一个方法，用于声明切入点表达式，一般地，该方法中再不需要添家其他代码
+    @Pointcut("execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(int,int))")
+    public void declareJointPointExpression(){
+    }
+
     //声明该方法是一个前置通知：在目标方法开始之前执行
-    @Before("execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(int,int))")
+    @Before(value = "declareJointPointExpression()")
+//    @Before("execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(int,int))")
     public void  beforeMethod(JoinPoint joinPoint){
         String methodName = joinPoint.getSignature().getName();
         List<Object> args = Arrays.asList(joinPoint.getArgs());
-        System.out.println("The method begins..."+methodName+"---"+args);
+        System.out.println("The method 前置 begins..."+methodName+"---"+args);
     }
     //在目标方法执行后执行，叫后置通知   无论方式是否发生异常都执行
     //在后置通知中还不能访问目标方法执行的结果
