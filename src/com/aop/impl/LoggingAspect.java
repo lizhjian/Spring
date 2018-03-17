@@ -61,7 +61,7 @@ public class LoggingAspect {
      * 环绕通知类似于动态代理的全过程：ProceedingJosinPoint类型的参数可以决定是够执行目标方法
      * 且环绕通知必须有返回值，返回值即为目标方法的返回值
      */
-    @Around(value = "execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(..))"
+   /* @Around(value = "execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(..))"
            )
     public  Object aroundMethod(ProceedingJoinPoint joinPoint){
        // System.out.println("环绕通知");
@@ -70,7 +70,7 @@ public class LoggingAspect {
         String methodName = joinPoint.getSignature().getName();
         try{
             System.out.println("环绕通知前置---"+methodName+"begins with "+Arrays.asList(joinPoint.getArgs()));
-           // result = joinPoint.proceed();
+            result = joinPoint.proceed();
             System.out.println("环绕通知后置---"+methodName+"ends with "+Arrays.asList(joinPoint.getArgs()));
         }catch (Throwable throwable){
         //   throwable.printStackTrace();
@@ -79,7 +79,7 @@ public class LoggingAspect {
         System.out.println("结束通知");
 
         return result;
-    }
+    }*/
 
 
 
