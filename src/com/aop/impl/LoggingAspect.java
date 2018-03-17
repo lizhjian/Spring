@@ -1,6 +1,7 @@
 package com.aop.impl;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
@@ -34,8 +35,8 @@ public class LoggingAspect {
     ,returning = "result")
     public void afterReturning(JoinPoint joinPoint,Object result){
         String methodName = joinPoint.getSignature().getName();
-        List<Object> args = Arrays.asList(joinPoint.getArgs());
-        System.out.println("The method afterReturing..."+methodName+"---"+args);
+    //    List<Object> args = Arrays.asList(joinPoint.getArgs());
+        System.out.println("The method 返回通知..."+methodName+"---"+result);
 
     }
 
@@ -53,6 +54,31 @@ public class LoggingAspect {
     //  public void afterThrowing(JoinPoint joinPoint,NullPointerException ex){
         String methodName = joinPoint.getSignature().getName();
         System.out.println("异常通知....");
+    }
+
+    /**
+     * 环绕通知需要携带这个类型的参数ProceedingJosinPoint
+     * 环绕通知类似于动态代理的全过程：ProceedingJosinPoint类型的参数可以决定是够执行目标方法
+     * 且环绕通知必须有返回值，返回值即为目标方法的返回值
+     */
+    @Around(value = "execution(public  int com.aop.impl.AtithmeticCalculatorImpl.*(..))"
+           )
+    public  Object aroundMethod(ProceedingJoinPoint joinPoint){
+       // System.out.println("环绕通知");
+        //执行目标方法
+        Object result = null;
+        String methodName = joinPoint.getSignature().getName();
+        try{
+            System.out.println("环绕通知前置---"+methodName+"begins with "+Arrays.asList(joinPoint.getArgs()));
+           // result = joinPoint.proceed();
+            System.out.println("环绕通知后置---"+methodName+"ends with "+Arrays.asList(joinPoint.getArgs()));
+        }catch (Throwable throwable){
+        //   throwable.printStackTrace();
+            System.out.println("异常通知");
+        }
+        System.out.println("结束通知");
+
+        return result;
     }
 
 
