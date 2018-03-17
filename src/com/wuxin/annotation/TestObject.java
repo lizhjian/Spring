@@ -23,8 +23,9 @@ public class TestObject {
 
         UserRepository userRepository = (UserRepository)ctx.getBean("userRepository");
         System.out.println(userRepository);*/
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-annotation.xml");
-        UserController  userController = (UserController)ctx.getBean("userController");
+       ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-annotation.xml");
+     //   UserController  userController = (UserController)ctx.getBean("userController");
+        UserController  userController = (UserController)ctx.getBean(UserController.class);
         System.out.println(userController);
         userController.execute();
 
