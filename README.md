@@ -57,3 +57,7 @@ Bean生命周期
   * 事物的传播行为(使用propagation 指定事物的传播行为，即当前的事物方法被另外一个事物方法调用时，如何使用事物)
     * @Transactional(propagation = Propagation.REQUIRED)(默认取值为使用调用方法的事物)
     * propagation = Propagation.REQUIRES_NEW(开启事物，即被调用方法用自己的)  
+    * isolation = Isolation.READ_COMMITTED,      设置隔离级别
+    * noRollbackFor = {BookStockException.class} 对BookStockException异常不回滚
+    * readOnly=true  只读事物（事物中如果有写操作会报错）
+    * timeout=3 使用timeout指定强制回滚之前事物可以占用的时间（可以用三秒，超过3秒回滚）
