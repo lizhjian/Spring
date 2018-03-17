@@ -41,4 +41,19 @@ Bean生命周期
       * 返回通知
       * 异常通知
       * 环绕通知
-    
+  
+  事物
+  ======    
+  
+  * 声明式事物
+        
+        * <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+             <property name="dataSource" ref="dataSource"></property>
+          </bean>
+        * <tx:annotation-driven transaction-manager="transactionManager" />
+        * 在对应方法或类上添加@transactional     
+     
+  * 编程式事物    
+  * 事物的传播行为(使用propagation 指定事物的传播行为，即当前的事物方法被另外一个事物方法调用时，如何使用事物)
+    * @Transactional(propagation = Propagation.REQUIRED)(默认取值为使用调用方法的事物)
+    * propagation = Propagation.REQUIRES_NEW(开启事物，即被调用方法用自己的)  
