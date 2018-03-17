@@ -9,7 +9,7 @@ public class Main {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContextAop.xml");
         //2.从ioc中获取实例
         AtithmeticCalculator atithmeticCalculator =ctx.getBean(AtithmeticCalculator.class);
-      //  AtithmeticCalculator atithmeticCalculator =(AtithmeticCalculatorImpl)ctx.getBean("atithmeticCalculatorImpl");
+      //  AtithmeticCalculator atithmeticCalculator =(AtithmeticCalculator) ctx.getBean("atithmeticCalculatorImpl");
         //3 使用Bean
         /*int result = atithmeticCalculator.add(3,6);
         System.out.println(result);*/
