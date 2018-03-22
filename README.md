@@ -53,11 +53,11 @@
         * 在对应方法或类上添加@transactional     
      
   * xml文件方式配置事物  
-      * 配置事物管理器 
+    * 配置事物管理器 
       <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
           <property name="dataSource" ref="dataSource"></property>
          </bean>
-      * 配置事物属性 
+    * 配置事物属性 
       <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
          相当于对下面所有方法中某一个方法（pruchase）的细化
@@ -65,7 +65,7 @@
         <tx:method name="*"/>
         </tx:attributes>
      </tx:advice>
-      * 配置事物切点
+    * 配置事物切点
      <aop:config>
              <!--BookShopService表示作用到这个接口的所有方法上-->
              <aop:pointcut expression="execution(* com.txxml.BookShopService.*(..))"
